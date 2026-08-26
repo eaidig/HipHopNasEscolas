@@ -1,0 +1,6 @@
+{
+  "name": "Mano Ordai - Portfólio Artístico & Cultural",
+  "description": "Portfólio artístico profissional de Mano Ordai (Luciano Ordai) - Músico, Historiador, Educador Social, Hip Hop, Afro-Punk, Projeto Hip Hop nas Escolas e Ponto de Cultura Pampa Crew.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
