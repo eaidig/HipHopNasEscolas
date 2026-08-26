@@ -1,21 +1,14 @@
 const fs = require('fs');
-const cheerio = require('cheerio');
 const html = fs.readFileSync('index.html', 'utf-8');
-const $ = cheerio.load(html);
 
-let musicSection = null;
-$('h2').each((i, el) => {
-  const text = $(el).text().toUpperCase();
-  if (text.includes('EP') || text.includes('MÚSICA') || text.includes('DISCOGRAFIA')) {
-    musicSection = $(el).closest('section');
-    console.log('Found section:', text);
-  }
-});
+const spotifyHero = html.match(/.{0,200}btn-hero-listen-spotify.{0,200}/g);
+if (spotifyHero) {
+    console.log("Hero Spotify:");
+    console.log(spotifyHero[0]);
+}
 
-if (musicSection) {
-  console.log("Section ID:", musicSection.attr('id'));
-  // print first 500 chars of inner content
-  console.log(musicSection.html().substring(0, 1000));
-} else {
-  console.log('Music section not found');
+const spotifyDisco = html.match(/.{0,200}Seguir Mano Ordai no Spotify.{0,200}/g);
+if (spotifyDisco) {
+    console.log("Disco Spotify:");
+    console.log(spotifyDisco[0]);
 }
